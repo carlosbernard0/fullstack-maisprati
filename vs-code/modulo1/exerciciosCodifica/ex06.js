@@ -7,4 +7,5 @@
 // Triângulo eqüilátero: possui todos os lados iguais (A=B e B=C)
 const prompt = require('prompt-sync')();
 
+let valor1 = prompt('Digite um valor para primeiro lado: ');
 
