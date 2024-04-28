@@ -60,16 +60,21 @@
 //      console.log('O maior numero é '+maiorNumMatriz([[1,2,3,41,54,124,61,23],[1,412,51,32,23,56,123,156]]));
 
 // data de hoje
-let data = new Date();
-let day = data.getDate();
-let month = data.getMonth()+1;
-let year = data.getFullYear();
-console.log(day+'/'+month+'/'+year);
+// let data = new Date();
+// let day = data.getDate();
+// let month = data.getMonth()+1;
+// let year = data.getFullYear();
+// console.log(day+'/'+month+'/'+year);
 
 
 // ENCONTRAR A QUANTIDADE DE MILISEGUNDOS ENTRE AS DATAS
-let data1 = new Date();
-data.setDate()+2;
-let diferenca =Math.abs(data.getDate() - data1.getDay());
-console.log(diferenca)
+let data = new Date();
+let dataDeOntem = new Date();
+dataDeOntem.setDate(data.getDate() - 1); // Definir a data anterior como um dia antes da data atual
+
+let diferenca = Math.abs(dataDeOntem.getTime() - data.getTime());
+function convertMilissecondsInDays(milissegundos) {
+    // let result;
+}
+console.log('Entre ontem e hj temos a diferenca de: '+diferenca+' milissegundos, e isso equivale '+ +'dias...');
         
