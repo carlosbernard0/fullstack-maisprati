@@ -65,28 +65,40 @@
 //     console.log(genero+': '+contagemGeneros[genero]);
 // }
 
-// PESQUISA BINARIA
-let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-const prompt = require('prompt-sync')()
-let optionNum = parseInt(prompt('Digite o numero de 1 a 20:')); 
+// pesquisa binaria
+// const prompt = require('prompt-sync')();
+// let listNuns = [1,2,3,4,5,6,7,8,9,10];
+// let optionNum = prompt('Digite um numero de 1 a 10 para ver em qual posicao da lista ele esta: ');
+
+// let binarySearch = (list,num)=>{
+//     let lowValue = 1;
+//     let highValue = list.length;
+//     while(lowValue <= highValue){
+//         let mid = Math.floor((lowValue+highValue)/2);
+//         let guess = mid
+//         if(num > mid){
+//             lowValue = mid+1;
+//         }else if(num < mid){
+//             highValue = mid -1;
+//         }else{
+//             return guess;
+//         }
+//     }
+
+//     return null;    
+// }
+// console.log(binarySearch(listNuns,optionNum));
 
 
-function pesquisaBinaria(list, num){
-    let checkNumber = false;
-    let moreOrLessNumber = parseInt(list.length);
-    moreOrLessNumber/=2;
 
-    while(!checkNumber){
-        if(num < moreOrLessNumber){
-            Math.floor(parseInt(moreOrLessNumber/=2));
-        }else if (num > moreOrLessNumber){
-            Math.floor(parseInt(moreOrLessNumber+= moreOrLessNumber/2));
-        }else{
-            console.log('Voce escolheu o numero '+moreOrLessNumber);
-            checkNumber = true;
-        };
+//spread and rest
+
+let soma=(...numeros)=>{
+    let sum = 0;
+    for (const num of numeros) {
+        sum+=num;
     }
-
+    return sum;
 }
 
-pesquisaBinaria(numbers,optionNum)
+console.log(soma(1,2,3));
