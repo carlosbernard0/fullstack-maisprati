@@ -9,3 +9,26 @@
 // Carros de luxo
 // - Até 200 Km percorridos: R$ 0,30 por Km
 // - Acima de 200 Km percorridos: R$ 0,25 por Km
+
+const prompt = require('prompt-sync')();
+let tipoCarro = prompt('Qual seria o tipo de carro(popular, luxo):');
+let dias = prompt('Por quantos dias voce alugou o carro:');
+let distancia = prompt('Qual foi a distancia percorrida por ele em Km: ');
+let custoGerado = 0;
+
+if(tipoCarro == 'popular'){
+
+    if(distancia <= 100){
+        custoGerado = (distancia*0.2)+(dias*90);
+    }else{
+        custoGerado = (distancia*0.1)+(dias*90);
+    }
+}else{
+    if(distancia <= 200){
+        custoGerado = (distancia*0.3)+(dias*150);
+    }else{
+        custoGerado = (distancia*0.25)+(dias*150);
+    }
+}
+
+console.log('Custo total: R$'+custoGerado);

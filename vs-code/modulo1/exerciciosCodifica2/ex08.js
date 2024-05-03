@@ -8,3 +8,18 @@
 // Faça um programa que leia quantas horas de atividade uma pessoa teve por
 // mês. Calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar
 
+const prompt = require('prompt-sync')();
+
+let horasPorMes = prompt('Quantas horas de atividade fisica você fez esse mês: ');
+let pontos;
+let ganho;
+if(horasPorMes <=10){
+    pontos = horasPorMes*2;
+}else if(horasPorMes >10 && horasPorMes<=20){
+    pontos= horasPorMes*5;
+}else{
+    pontos = horasPorMes*10;
+}
+
+ganho = pontos*0.05;
+console.log('Você teve '+pontos+' pontos acumulados, gerando um ganho de: R$'+ganho);
