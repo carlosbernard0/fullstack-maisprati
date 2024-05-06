@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#titulo{ 
+            font: normal 20pt arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Testando o DOM com JavaScript</h1>
+    <div id="titulo">botao interativo</div>
+
+    <h2>Calculadora</h2>
+    Primeiro valor:<input type="number" name="num1" id="num1">
+    <br>
+    Segundo valor:<input type="number" name="num2" id="num2">
+    <br>   
+    Escolha a operação:<label for="operador">
+        <select  id="operador">
+            <option value="soma" >Soma</option>
+            <option value="subtracao">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisao</option>
+        </select>
+    </label>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res">Resultado: </div>
+
+</body>
+<script>
+    let texto = window.document.getElementById('titulo')
+    texto.addEventListener('click',clicar);
+    texto.addEventListener('mouseout',sair);
+    texto.addEventListener('mouseenter',entrar);
+    
+    function clicar(){
+        texto.innerText = "clicou";
+        texto.style.background = 'red';
+        texto.style.textAlign = 'left';
+    }
+    function entrar(){
+        texto.innerText = 'entrou'
+        texto.style.textAlign = 'right';
+        texto.style.background = 'green';
+
+    }
+    function sair(){
+        texto.innerText = "saindo";
+        texto.style.textAlign = 'center';
+        texto.style.background = 'yellow';
+
+    }
+    
+
+    var res = window.document.getElementById('res');
+    function calcular(num1, num2, operador){
+        num1 =window.document.querySelector('input#num1').value;
+        num2 = window.document.querySelector('input#num2').value;
+        operador = window.document.getElementById('operador').value;
+        
+        let resultado = 0;
+    
+        if(operador == 'soma'){
+            resultado = somar(num1,num2);
+            res.innerText = 'Resultado da '+operador+' é : '+resultado;
+            return resultado;
+        }else if(operador == 'subtracao'){
+            resultado = subtrair(num1,num2);
+            res.innerText = 'Resultado da '+operador+' é : '+resultado;
+            return resultado;
+        }else if(operador == 'multiplicacao'){
+            resultado = multiplicar(num1,num2);
+            res.innerText = 'Resultado da '+operador+' é : '+resultado;
+            return resultado;
+        }else if(operador == 'divisao'){
+            resultado = dividir(num1,num2);
+            res.innerText = 'Resultado da '+operador+' é : '+resultado.toFixed(2);
+            return resultado;
+        }else{
+            alert('Nao consegui calcular');
+        };
+        
+    }
+
+    function somar(num1,num2){
+        let numero1 = Number(num1);
+        let numero2 = Number(num2);
+        return num1+num2;
+    }
+
+    function subtrair(num1,num2){
+        return num1-num2;
+    }
+    function multiplicar(num1,num2){
+        return num1*num2;
+    }
+    function dividir(num1,num2){
+        return num1/num2;
+    }
+
+</script>
+</html>

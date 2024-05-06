@@ -30,3 +30,4 @@ console.log('O somatório entre todos os valores: '+somaDeTodos);
 console.log('menor valor digitado '+menorNumero);
 console.log('média entre todos os valores: '+(somaDeTodos/qtndValores).toFixed(1));
 console.log('valores pares:'+listaDePares);
+
