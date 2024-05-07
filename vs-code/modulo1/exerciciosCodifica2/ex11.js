@@ -5,15 +5,15 @@ const prompt = require('prompt-sync')();
 let numero = parseInt(prompt('Qual seria o valor: '));
 let somaDaProgressao = 0;
 
-for (let i = 0; i < 10; i++) {
-    console.log(numero);
+for (let i = 1; i <= 10; i++) {
+    console.log('Termo '+i+' é: '+numero);
     somaDaProgressao+= numero
     numero+= numero;
     
 
 }
 
-console.log(somaDaProgressao);
+console.log('Somando a sequência ao todo dá: '+somaDaProgressao);
 
 
 
