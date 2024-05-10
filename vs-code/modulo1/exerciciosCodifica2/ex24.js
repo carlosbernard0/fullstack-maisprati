@@ -22,8 +22,6 @@ for (let i=0; i<M.length;i++) {
     
 }
 
-
-
 function generateRandomNum(){
     let numeroRandom = (Math.random());
         if(numeroRandom <= 0.5){
