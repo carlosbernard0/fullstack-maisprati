@@ -9,6 +9,7 @@ let somaM = new Array(15);
 for (let i = 0; i < M.length; i++) {
     let soma = 0;
     for (let j = 0; j < M[i].length; j++) {
+        
         M[i][j] = Math.floor(Math.random()*5);
         soma+=M[i][j];
     }
