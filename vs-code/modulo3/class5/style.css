@@ -1,0 +1,31 @@
+div{
+    border: 1px solid red;
+    text-align: left;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 150px;
+}
+
+ul li {
+    position: relative;
+}
+
+li ul{
+    position: absolute;
+    left: 149px;
+    top: 0;
+    display: none;
+}
+
+ul li a{
+    display: block;
+    color: rgb(17, 90, 187);
+    background: white;
+    padding: 5px;
+
+    border: 1px solid rgb(17, 90, 187);
+}
