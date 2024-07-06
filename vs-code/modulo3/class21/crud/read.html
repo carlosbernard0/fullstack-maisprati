@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload>
+
+    <header>
+        <nav>
+            <a href="create.html">Novo Contato</a>
+            <a href="read.html">Buscar Contato</a> 
+        </nav>
+    </header>
+    <main> 
+        <h1>Buscar Contato</h1>
+
+        <form>
+            <div>
+                Nome:
+                <input type="text">
+            </div>
+
+            <div>
+                Tipo:
+                <select name="tipos-contato" id="contact-type">
+                    <option value="profissional">
+                        Profissional
+                    </option>
+                    <option value="pessoal">
+                        Pessoal
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                Fone:
+                <input type="text">
+            </div>
+
+            <div>
+                Email:
+                <input type="email">
+            </div>
+
+            <div>
+                
+                <button onclick="searchContacts()">Search</button>
+                <button type="submit" onclick="removeItem()">Remove item</button>
+                <button type="submit" onclick="removeContacts()">Remove all</button>
+            </div>
+        </form>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Fone</th>
+                </tr>
+            </thead>
+            <tbody id="listContacts">
+
+            </tbody>
+        </table>
+
+
+    
+    </main>
+    <script src="app.js"></script>    
+</body>
+
+</html>

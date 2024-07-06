@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Agenda de contatos</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="create.html">Novo Contato</a>
+            <a href="read.html">Buscar Contato</a> 
+        </nav>
+    </header>
+    <main> 
+        <h1>Novo Contato</h1>
+
+        <form>
+            <div>
+                Nome:
+                <input type="text" id="name">
+            </div>
+
+            <div>
+                Tipo:
+                <select name="tipos-contato" id="contact-type">
+                    <option value="profissional">
+                        Profissional
+                    </option>
+                    <option value="pessoal">
+                        Pessoal
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                Fone:
+                <input type="text" id="number-cellphone">
+            </div>
+
+            <div>
+                Email:
+                <input type="email" id="mail">
+            </div>
+
+            <div>
+                <button type="submit" onclick="registerContact()">Salvar</button>
+            </div>
+        </form>
+
+        
+    
+    </main>
+</body>
+</html>
