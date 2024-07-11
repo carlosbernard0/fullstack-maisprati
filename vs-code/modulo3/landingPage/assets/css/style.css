@@ -2,6 +2,12 @@
 
 :root{
     --font: 'Roboto','Helvetica','sans-serif';
+    --color1: #10454F;
+    --color2: #506266;
+    --color3: #818274;
+    --color4: #A3AB78;
+    --color5: #BDE038;
+    
 
 }
 
@@ -9,34 +15,4 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    font-family: var(--font);
-}
-
-.logo{
-    height: 100px;
-    width: 100px;
-
-
-}
-
-nav{
-    background-color: rgb(105, 92, 92);
-    
-
-}
-
-.nav-item{
-    text-align: center;
-    list-style-type: none;
-
-
-
-}
-
-.nav-link{
-    text-decoration: none;
-    color: white;
 }
