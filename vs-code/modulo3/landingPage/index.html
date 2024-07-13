@@ -3,117 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Care</title>
+    <title>AUTOCARE</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/logo-empresa.jpg" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <nav>
-            <span>Auto Care</span>
-            <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Clients</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="principal">
-            <header>
-                <span>novidades</span>
-                <h1>Seu carro precisa desse serviço</h1>
-                <hr>
-                <h2>Explore diversos serviços para deixar seu carro nos trinques</h2>
-            </header>
-            <div>
-                <figure><img src="assets/images/photo1.jpg" alt=""></figure>
-                <figure><img src="assets/images/photo2.jpg" alt=""></figure>
-                <figure><img src="assets/images/photo3.jpg" alt=""></figure>
-                <figure><img src="assets/images/photo4.jpg" alt=""></figure>
-            </div>
-        </section>
-        <section id="services">
-            <header>
-                <span>services</span>
-                <h2>Confira alguns dos nossos serviços</h2>
-        
-            </header>
-            <div>
-                <div>
-                    <header>
-                        <span>em alta</span>
-                        <h3>Suspensão e alinhamento</h3>
-                    </header>
-                    <p>Garanta a estabilidade, segurança, conforto e economia de combustível do seu carro.</p>
-                    <div>
-                        <img src="https://avatars.githubusercontent.com/u/125523128?v=4" alt="">
-                        <span>Carlos Bernardo</span> 
-                    </div>
+    <div id="container"> 
+        <header>
+            <nav>
+                <span class="logo">AutoCare</span>
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Clients</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="principal">
+                <header class="principal-header">
+                    <span>novidades</span>
+                    <h1>Seu carro precisa desse serviço</h1>
+                    <hr>
+                    <h3>Explore diversos serviços para deixar seu carro nos trinques!</h3>
+                </header>
+                <div class="principal-images">
+                    <figure><img src="assets/images/photo1.jpg" alt=""></figure>
+                    <figure><img src="assets/images/photo2.jpg" alt=""></figure>
+                    <figure><img src="assets/images/photo3.jpg" alt=""></figure>
+                    <figure><img src="assets/images/photo4.jpg" alt=""></figure>
                 </div>
-                <div>
-                    <header>
-                        <h3>Diagnóstico e reparo de motor</h3>
-                    </header>
-                    <p> Tenha a certeza de que seu carro está em boas condições e não te deixará na mão.</p>
-                    <div>
-                        <img src="https://avatars.githubusercontent.com/u/125523128?v=4" alt="">
-                        <span>Carlos Bernardo</span> 
-                    </div>
-                </div>
-                <div>
-                    <header>
-                        <h3>Elétrica</h3>
-                    </header>
-                    <p>Mantenha seu carro em dia com serviços especializados em sistema elétrico automotivo! Diagnóstico preciso, reparos rápidos e eficientes para garantir a segurança e o bom funcionamento do seu veículo.</p>
-                    <div>
-                        <img src="https://avatars.githubusercontent.com/u/125523128?v=4" alt="">
-                        <span>Carlos Bernardo</span> 
-                    </div>
-                </div>
-                <div>
-                    <header>
-                        <h3>Troca de óleo e filtros</h3>
-                    </header>
-                    <p>Mantenha seu carro em dia com a troca de óleo e filtros!
-                        <br>
-                        Serviço rápido e profissional para garantir o bom funcionamento do seu veículo..</p>
-                    <div>
-                        <img src="https://avatars.githubusercontent.com/u/125523128?v=4" alt="">
-                        <span>Carlos Bernardo</span> 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="form">
-            <h3>Consulte os serviços disponiveis na sua região hoje mesmo!!</h3>
-            <form>
-                <div>
-                  <label for="nome">Nome:</label>
-                  <input type="text" id="nome" />
-                </div>
-                <div>
-                    <label for="number">Telefone:</label>
-                    <input type="number" id="number" />
-                  </div>
-                <div>
-                  <label for="email">E-mail:</label>
-                  <input type="email" id="email" />
-                </div>
-                <div>
-                  <label for="msg">Mensagem:</label>
-                  <textarea id="msg"></textarea>
-                </div>
-              </form>
-              
-        </section>
-    </main>
+                <div class="clear"></div>
 
-    <footer>
-        <p>Todos os direitos reservados!</p>
-    </footer>
+            </section>
+            <section id="services">
+                <header class="services-header">
+                    <span>services</span>
+                    <h2>Confira alguns dos nossos serviços</h2>
+        
+                </header>
+                <div class="services-content">
+                    <div class="service-card">
+                        <header>
+                            <span>em alta</span>
+                            <h3>Suspensão e alinhamento</h3>
+                        </header>
+                        <p>Garanta a estabilidade, segurança, conforto e economia de combustível do seu carro.
+                            Lorem ipsum dolor sit amet consi ut amet quas iste autem, aliquid quisquam laboriosam voluptatem dignissimos numquam perspiciatis.
+                        </p>
+                        <div>
+                            <img src="assets/images/photo1.jpg" alt="">
+                        </div>
+                        <a href="">Saiba Mais...</a>
+                    </div>
+                    <div class="service-card">
+                        <header>
+                            <h3>Diagnóstico e reparo de motor</h3>
+                        </header>
+                        <p> Tenha a certeza de que seu carro está em boas condições e não te deixará na mão.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim officia minima sequi dolor delectus deleniti corrupti provident, optio fugiat, beatae, temporibus corporis odit vero consequuntur voluptates magnam illum soluta.
+                        </p>
+                        <div>
+                            <img src="assets/images/photo2.jpg" alt="">
+                        </div>
+                        <a href="">Saiba Mais...</a>
+                    </div>
+                    <div class="service-card">
+                        <header>
+                            <h3>Elétrica</h3>
+                        </header>
+                        <p>Mantenha seu carro em dia com serviços especializados em sistema elétrico automotivo! Diagnóstico preciso, reparos rápidos e eficientes para garantir a segurança e o bom funcionamento do seu veículo.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit perferendis facilis, quo error sit esse saepe dignissimos consectetur. Iure molestiae porro a sunt, enim rem minus recusandae blanditiis quam numquam.
+                        </p>
+                        
+                        <div>
+                            <img src="assets/images/photo3.jpg" alt="">
+                        </div>
+                        <a href="">Saiba Mais...</a>
+
+                    </div>
+                    <div class="service-card">
+                        <header>
+                            <h3>Troca de óleo e filtros</h3>
+                        </header>
+                        <p>Mantenha seu carro em dia com a troca de óleo e filtros!
+                            <br>
+                            Serviço rápido e profissional para garantir o bom funcionamento do seu veículo..
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure aut tenetur tempora illo pariatur. Nam earum blanditiis ratione debitis tenetur atque repellendus, illo obcaecati voluptas soluta incidunt, accusantium dolore hic!</p>
+                        <div>
+                            <img src="assets/images/photo4.jpg" alt="">
+                        </div>
+                        <a href="">Saiba Mais...</a>
+
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </section>
+            <section id="form">
+                <header>
+                    <h3>Consulte os serviços disponiveis da sua região hoje mesmo!!</h3>
+                </header>
+                <form>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" />
+                    </div>
+                    <div>
+                        <label for="number">Telefone:</label>
+                        <input type="number" id="number" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" />
+                    </div>
+                    <div>
+                        <label for="msg">Mensagem:</label>
+                        <textarea id="msg"></textarea>
+                    </div>
+
+                    <div class="input-submit">
+                        <input type="submit">
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>Todos os direitos reservados! Feito por <a href="https://github.com/carlosbernard0" target="_blank">Carlos</a></p>
+            
+        </footer>
+    </div>
 </body>
 </html>
 

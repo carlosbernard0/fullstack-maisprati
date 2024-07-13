@@ -16,3 +16,276 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html{
+    font-family: var(--font);
+}
+
+body{
+    background-color: var(--color4);
+    color:white;
+}
+
+#container{
+    max-width: 1080px;
+    margin:0 auto; 
+    background-color: var(--color2);
+    box-shadow: 2px 2px 4px rgb(48, 48, 48);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+/* header start*/
+nav{
+    padding: 1.5rem 10rem;
+    height: 90px;
+    margin: 0 auto;
+    background-color: var(--color1);
+}
+
+nav ul{
+    float: right;
+    padding-top: 13px;
+}
+
+nav li{
+    float: left;
+}
+
+nav li{
+    padding-left: 20px;
+    
+}
+
+.logo{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+nav a{
+    color: white;
+    font-size: 1.3rem;
+}
+
+nav a:hover{
+    color: var(--color5);
+    font-weight: 600;
+    text-decoration: overline;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 930px) {
+    
+
+    nav{
+        height: 200px;
+        padding: 1rem;
+    }
+
+    nav ul{
+        float: left;
+    }
+
+    a:hover{
+        font-size: 16px;
+        font-weight: 100;
+    }
+    
+}
+
+/* header end */
+
+
+/* main start */
+
+
+#principal {
+    width: 100%;
+    background-color: var(--color3)
+}
+
+.principal-header{
+    float: left;
+    width: 50%; 
+    padding: 30px;
+    padding-top: 100px;
+}
+
+.principal-header span{
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.principal-header h1,h3{
+    text-align: center;
+}
+
+.principal-header h1{
+    font-size: 2rem;
+}
+
+.principal-header h1,span,h3{
+    padding: 10px;
+}
+
+hr{
+    border-color: var(--color1);
+}
+
+
+
+.principal-images{
+    width: 50%;
+    float: left; 
+    padding: 30px;   
+}
+
+.principal-images > figure > img{
+    float: left;
+    padding: 2px;
+    width: 50%;
+    border-radius: 13px;
+}
+
+.clear{
+    clear: both;
+    padding-bottom: 30px;
+}
+
+#services {
+    width: 100%;
+}
+
+.services-header{
+    width: 100%;
+    padding: 30px;
+}
+
+.services-header span{
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.services-header h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.services-content{
+    float: left;
+    width: 100%;
+    padding: 10px;
+}
+
+.service-card{
+    background-color: var(--color3);
+    float: left;
+    width: 48%;
+    padding: 20px;
+    border: 2px solid var(--color1);
+    margin: 10px;
+}
+
+.service-card header > span{
+    text-transform: uppercase;
+}
+
+.service-card  header > h3{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.service-card p{
+    text-align: justify;
+    padding: 10px 0 ;
+}
+
+.service-card img{
+    width: 100%;
+    padding: 15px 0 ;
+    border-radius: 15px;
+}
+
+.service-card a{
+    text-align:right ;
+    color: white;
+    background-color: var(--color1);
+    border-radius: 3px;
+}
+.service-card a:hover{
+    color:var(--color1);
+    background-color: #BDE038;
+}
+
+
+#form{
+    width: 100%;
+    border: 3px solid var(--color1);
+    background-color: var(--color3);
+}
+
+#form header{
+    background-color: var(--color3);
+    width: 100%;
+}
+
+#form header > h3{
+    
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 800;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+#form form > div {
+    padding: 15px;
+}
+
+#form form > div > input, div> textarea{
+    color: var(--color1);
+}
+
+.input-submit input{
+    color: var(--color1);
+    font-size: 1.2rem;
+
+}
+
+
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: #10454F;
+}
+
+footer p{
+    font-size: 1.2rem;
+    padding-top: 15px;
+    text-align: center;
+}
+
+footer a{
+    color: white;
+    font-weight: 600;
+}
+
+footer a:hover{
+    color: var(--color5);
+    font-weight: 800;
+    
+}
+
