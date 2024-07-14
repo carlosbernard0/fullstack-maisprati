@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services with AJAX</title>
+    <style>
+        body{
+            background-color: lightslategray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3{
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        ul > li{
+            display: flex;
+
+            flex-direction: column;
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        a{
+            color: blue;
+            text-decoration: none;
+            background-color: bisque;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        a:hover{
+            color: darkcyan;
+        }
+
+        .img-loading{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>
+            Alguns de nossos serviços!!
+        </h3>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="options">
+                <ul>
+                    <li><a href="#" onclick="requisitar('susp_content.html')">Suspensão e alinhamento</a></li>
+                    <li><a href="#" onclick="requisitar('repa_content.html')">Diagnóstico e reparo de motor</a></li>
+                    <li>
+                        <a href="#" onclick="requisitar('elet_content.html')">Elétrica</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="requisitar('oleo_content.html')">Troca de óleo e filtros</a>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div id="content">
+                    <!-- conteudo via AJAX aparecerá aqui!! -->
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script>
+        function requisitar(url){
+            document.getElementById('content').innerHTML = ''
+
+            if(!document.getElementById('loading')){
+                const imgLoading = document.createElement('img');
+
+                imgLoading.id = 'loading'
+                imgLoading.src = 'loading.gif'
+                imgLoading.className = 'img-loading'
+                document.getElementById('content').appendChild(imgLoading);
+
+            }
+
+            let ajax = new XMLHttpRequest()
+            ajax.open('GET', url)
+
+            console.log(ajax.readyState)
+
+            ajax.onreadystatechange = () => {
+                if(ajax.readyState == 4 && ajax.status == 200){
+                    document.getElementById('content').innerHTML = ajax.responseText
+                }
+
+                if(ajax.readyState == 4 && ajax.status == 404){
+                    docoment.getElementById('content').innerHTML = 'Internal Error'
+                }
+            }
+            
+
+            setTimeout(()=>{
+                ajax.send()
+            },3000)
+            
+        }
+    </script>
+</body>
+</html>
