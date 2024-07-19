@@ -22,7 +22,7 @@ html{
 }
 
 body{
-    background-color: var(--color4);
+    background-color: var(--color1);
     color:white;
 }
 
@@ -30,7 +30,7 @@ body{
     max-width: 1080px;
     margin:0 auto; 
     background-color: var(--color2);
-    box-shadow: 2px 2px 4px rgb(48, 48, 48);
+    /* box-shadow: 2px 2px 4px rgb(48, 48, 48); */
 }
 
 
