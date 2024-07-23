@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #181C1F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header > h1{
+    color: #03D0EF;
+}
+
+header > p{
+    color: #6696A0;
+}
+
+main{
+    background-color: #2D3942;
+}
