@@ -2,30 +2,35 @@ import { useState, useEffect } from "react";
 
 function News(){
     const [ news, setNews] = useState(null)
+    const [ count, setCount] = useState(1)
      
     
 
     useEffect(() => {
         const fetchNews = async () =>{
-            const response = await fetch(`https://jsonplaceholder.typecode.com/posts/${count}`)
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${count}`)
             const dataNews = await response.json()
-            setNews(dataNews)               
+            setNews(dataNews) 
         }
 
-        fetchNews() 
-        const timeId = setInterval(()=>{
-            setCount(prevCount=>prevCount+1)
-
+        const interval = setInterval(()=>{
+            setCount((prevCount)=>prevCount+1)            
         },10000)
-
-        return () => clearInterval(timeId)
-    },[timeId])
+        
+        fetchNews() 
+        return () => {
+            clearInterval(interval)
+        }
+    },[count])
 
     return(
         <div>
             <h1>
-                {news}
+                {news ? news.title : 'carregando noticia'}
             </h1>
+            <p>
+            {news ? news.body: ' '}
+            </p>
         </div>
     )
 }

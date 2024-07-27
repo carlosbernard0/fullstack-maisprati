@@ -5,11 +5,11 @@
 }
 
 body{
-    background-color: lightcoral ;
+    background-color: white ;
 }
 
 header{
-    background-color: aquamarine;
+    background-color: lightskyblue;
     height: 10vh;
 }
 
@@ -40,7 +40,7 @@ main{
 }
 
 footer{
-    background-color: aquamarine;
+    background-color: lightskyblue;
 }
 
 footer > p {
