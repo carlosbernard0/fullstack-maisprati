@@ -5,11 +5,28 @@ import { useEffect, useState } from "react";
 function NewsUpdater() {
   // Declara uma variável de estado 'news' e uma função para atualizá-la 'setNews'
   // Inicialmente, 'news' é um array vazio
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState([]); 
 
   // Declara uma variável de estado 'isLoading' e uma função para atualizá-la 'setIsLoading'
   // Inicialmente, 'isLoading' é true
   const [isLoading, setIsLoading] = useState(true);
+
+  const listNumNews = [0,1,2,3,4]
+  let chamarFuncao = 0;
+
+  function addNumsNews(list){
+    let nextValueList =list[list.length-1]+1  
+    for (let i = 0; i < list.length; i++) {
+        if(i == 0){
+            list[i] = nextValueList
+        }else {
+            list[i] = nextValueList+1
+            nextValueList++
+        }
+        
+    }
+    return list
+  }
 
   // useEffect é um hook que executa um efeito colateral
   useEffect(() => {
@@ -26,7 +43,13 @@ function NewsUpdater() {
         // Converte a resposta em JSON
         const data = await response.json();
         // Atualiza o estado 'news' com os primeiros 5 itens do array de dados recebidos
-        setNews(data.slice(0, 5));
+        setNews(data.slice(listNumNews[0],(listNumNews[listNumNews.length-1])+1));
+        if(chamarFuncao > 0){
+            addNumsNews(listNumNews)
+        }
+        chamarFuncao++
+
+
       } catch (error) {
         // Se ocorrer um erro, exibe uma mensagem no console
         console.error("Ligue pro suporte", error);
@@ -38,6 +61,7 @@ function NewsUpdater() {
 
     // Chama a função para buscar notícias
     fetchNews();
+
 
     // Configura um intervalo para buscar notícias a cada 10 segundos
     const interval = setInterval(fetchNews, 10000);
