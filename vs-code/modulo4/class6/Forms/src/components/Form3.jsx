@@ -1,104 +1,92 @@
-import { useState } from "react";
-import Form from "./Form";
+import { useState } from 'react'
 
-function Form3(){
-    const [info ,setInfo] = useState({
-        nome: '',
+const RegistrationForm = () => {
+    const [formData, setFormData] = useState({
+        name: '',
         email: '',
-        senha: '',
-        senhaConf: ''
+        password: '',
+        confirmPassword: ''
     })
 
-    
-    const [ errors, setErrors] = useState({
-        nome: '',
-        email: '',
-        senha: '',
-        senhaConf: ''
-    })
+    const [errors, setErrors] = useState({})
 
-    const handlerChange = (event) => {
-        const { value, name} = event.target 
+    const [submitted, setSubmitted] = useState(false)
 
-        setInfo((prevInfo)=>({
-            ...prevInfo, [name]: value
-        }))
+    const validate = () => {
+        const newErrors = {}
+
+        if(!formData.name) newErrors.name = 'Nome é obrigatório'
+        if(!formData.email) {
+            newErrors.email = 'Email é obrigatório'
+        } else if (!/\S+@\S+\S+.\S+/.test(formData.email)){
+            newErrors.email = 'Email Inválido'
+        }
+
+        if(!formData.password) {
+            newErrors.password = "O campo de senha é obrigatório"
+        } else if(formData.password.length < 8) {
+            newErrors.password = "O campo de senha precisa de ao menos 8 caracteres"
+        }
+        if(!formData.confirmPassword) {
+            newErrors.confirmPassword = "O campo de senha é obrigatório"
+        } else if(formData.confirmPassword !== formData.password) {
+            newErrors.confirmPassword = "O campo de senha precisa coincidir"
+        }
+
+        return newErrors
     }
 
-    const handlerSubmit = (event) =>{
+    const handleChange = (event) => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleSubmit = (event) => {
         event.preventDefault()
-        
-        const nome = info.nome
-        const email = info.email
-        const senha = info.senha
-        const senhaConf = info.senhaConf
-        
+        const validationErrors = validate()
 
-        let temArroba = false
-        let temPonto = false
-        for (let i = 0; i < email.length; i++) {
-            if(email[i] == '@'){
-                temArroba = true
-            }
-
-            if(email[i] == '.'){
-                temPonto = true
-            }  
+        if(Object.keys(validationErrors).length === 0){
+            setSubmitted(true)
+            setErrors({});
+        } else {
+            setErrors(validationErrors)
         }
-
-        
-
-        if(!temArroba || !temPonto){
-            setErrors(() =>({
-                email: 'deve ser um email valido!'  
-              }))
-        }else if(senha.length < 8){
-            setErrors(() =>({
-              senha: 'a senha deve ter mais que 8 caracteres'  
-            }))
-        }else if(senha != senhaConf){
-            setErrors(() =>({
-                senhaConf: 'senha de confirmacao deve ser igual a senha'  
-              }))
-        }else if(!nome || !email || !senha || !senhaConf){
-            alert('Preencha todos os campos!!')
-        }else{
-            setErrors(()=>({
-                nome: '',
-                email: '',
-                senha: '',
-                senhaConf: ''
-            }))
-            alert('sucesso! formulario submetido')
-        }
-            
     }
 
     return(
-        <form onSubmit={handlerSubmit}>
-            <label>
-                Nome:
-                <input type="text" name="nome" onChange={handlerChange} />
-                {errors && <p>{errors.nome}</p>}
-            </label>
-            <label>
-                Email:
-                <input type="text" name="email" onChange={handlerChange} />
-                {errors && <p>{errors.email}</p>}
-            </label>
-            <label>
-                Senha:
-                <input type="text" name="senha" onChange={handlerChange} />
-                {errors && <p>{errors.senha}</p>}
-            </label>
-            <label>
-                Confimar Senha:
-                <input type="text" name="senhaConf" onChange={handlerChange} />
-                {errors && <p>{errors.senhaConf}</p>}
-            </label>
-            <button>Confirmar</button>
-        </form>
+        <div>
+            <h2>Registre-se</h2>
+            {submitted && <p>Registrado com sucesso!</p>}
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" name='name' value={formData.name} onChange={handleChange}/>p
+                    {errors.name && <p>{errors.name}</p>}
+                </div>
+
+                <div>
+                    <label>E-mail:</label>
+                    <input type="text" name='email' value={formData.email} onChange={handleChange}/>p
+                    {errors.email && <p>{errors.email}</p>}
+                </div>
+
+                <div>
+                    <label>Senha:</label>
+                    <input type="password" name='password' value={formData.password} onChange={handleChange}/>p
+                    {errors.password && <p>{errors.password}</p>}
+                </div>
+
+                <div>
+                    <label>Repita sua senha:</label>
+                    <input type="password" name='confirmPassword' value={formData.confirmPassword} onChange={handleChange}/>p
+                    {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+                </div>
+                <button type='submit'>Registrar</button>
+            </form>
+        </div>
     )
 }
 
-export default Form3
+export default RegistrationForm

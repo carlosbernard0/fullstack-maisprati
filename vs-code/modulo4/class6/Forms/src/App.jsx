@@ -1,13 +1,15 @@
 import Form from "./components/Form"
 import Form2 from "./components/Form2"
-import Form3 from "./components/Form3"
+import MyForm3 from "./components/MyForm3"
+import RegistrationForm from "./components/Form3"
 
 function App() {
 
   return (
     <>
      {/* <Form2/> */}
-     <Form3/>
+     {/* <MyForm3/> */}
+     <RegistrationForm/>
     </>
   )
 }
