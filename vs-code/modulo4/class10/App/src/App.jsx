@@ -1,10 +1,12 @@
 import LanguageTranslator from "./components/LanguageTranslator"
+import MoviesSearchEngine from "./components/MovieSearchEngine"
 
 function App() {
 
   return (
     <>
-      <LanguageTranslator/>
+      {/* <LanguageTranslator/> */}
+      <MoviesSearchEngine/>
     </>
   )
 }
