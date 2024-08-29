@@ -24,7 +24,7 @@ const PutUser = () => {
             <input name='email' type="text" onChange={handleChange}/>
 
             <button onClick={sendPut}>
-                Recuperar dados
+                Redefinir email
             </button>
 
         </div>   

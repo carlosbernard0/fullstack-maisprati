@@ -26,7 +26,7 @@ const Form = () => {
         
             console.log(response.data)
 
-            alert('Usuario criado com sucesso! id:'+ response);
+            alert('Usuario criado com sucesso! id:'+ response.data);
 
         } catch (error) { 
             console.error(error)

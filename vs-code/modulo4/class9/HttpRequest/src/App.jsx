@@ -7,7 +7,19 @@ function App() {
   
   return (
     <>
+      <hr />
+      POST
+      <Form/>
+      <hr />
+      GET
+      <GetUser/>
+      <hr />
+      PUT
+      <PutUser/>
+      <hr />
+      DELETE
       <DeleteUser/>
+      <hr />
     </>
   )
 }
