@@ -3,6 +3,7 @@ import WindowSize from "./components/WindowSize";
 import PersistentCounter from "./components/PersistentCounter";
 import RealTimeClock from "./components/RealTimeClock";
 import ToggleText from "./components/ToggleText";
+import LimitedCounter from "./components/LimitedCounter";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <WindowSize/> */}
       {/* <PersistentCounter/> */}
       {/* <RealTimeClock/> */}
-      <ToggleText/>
+      {/* <ToggleText/> */}
+      <LimitedCounter/>
     </>
   )
 }
