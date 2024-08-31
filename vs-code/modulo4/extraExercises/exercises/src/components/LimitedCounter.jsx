@@ -6,13 +6,13 @@ const LimitedCounter = () => {
     const handleCountMore = () =>{
         if(count >= 10){
             setCount('Error: nao pode passar de 10 a contagem!')
-            
+
         }else{
-            setCount(prevCount => prevCount +1);
+            setCount(prevCount => prevCount + 1);
         }
     } 
     const handleCountLess = () =>{
-        setCount(prevCount => prevCount -1);
+        setCount(prevCount => prevCount - 1);
     } 
 
     return(
