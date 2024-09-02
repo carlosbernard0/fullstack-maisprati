@@ -10,14 +10,22 @@ import Cart from "./components/Cart"
 import LanguageContext from "./context/LanguageContext"
 import LanguageSwitcher from "./components/LanguageSwitcher"
 import Greeting from "./components/Greeting"
+import UserPreferencesContext from "./context/UserPreferencesContext"
+import ViewModeSwitcher from "./components/ViewModeSwitcher"
+import ItemList from "./components/ItemList"
+import NotificationSettingsContext from "./context/NotificationSettingsContext"
+import NotificationToggle from "./components/NotificationToggle"
+import NotificationStatus from "./components/NotificationStatus"
 
 function App() {
   // const [theme, setTheme] = useState('light')
   // const [isLogged, setIsLogged] = useState(false)
-  const [productList, setProductList] = useState([])
-  const [goCart, setGoCart] = useState(false)
-  const [cartItems, setCartItems] = useState([])
-  const [language, setLanguage] = useState('en')
+  // const [productList, setProductList] = useState([])
+  // const [goCart, setGoCart] = useState(false)
+  // const [cartItems, setCartItems] = useState([])
+  // const [language, setLanguage] = useState('en')
+  // const [viewMode, setViewMode] = useState('list')
+  const [ notificationIsActive, setNotificationIsActive] = useState(false)
   
   return (
     <>
@@ -31,10 +39,18 @@ function App() {
           {goCart ? <ProductList/>: <AddProductList/>}
           {cartItems.length > 0 && <Cart />}
       </CartContex.Provider> */}
-      <LanguageContext.Provider value={{language,setLanguage}}>
+      {/* <LanguageContext.Provider value={{language,setLanguage}}>
         <LanguageSwitcher/>
         <Greeting/>
-      </LanguageContext.Provider>
+      </LanguageContext.Provider> */}
+      {/* <UserPreferencesContext.Provider value={{viewMode,setViewMode}}>
+          <ViewModeSwitcher/>
+          <ItemList/>
+      </UserPreferencesContext.Provider> */}
+      <NotificationSettingsContext.Provider value={{notificationIsActive,setNotificationIsActive}}>
+          <NotificationToggle/>
+          <NotificationStatus/>
+      </NotificationSettingsContext.Provider>
 
     </>
   )
