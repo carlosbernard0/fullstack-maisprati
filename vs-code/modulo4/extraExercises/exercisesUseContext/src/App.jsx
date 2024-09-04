@@ -22,6 +22,12 @@ import ThemedComponent from "./components/ThemedComponent"
 import UserProfileContext from "./context/UserProfileContext"
 import Profile from "./components/Profile"
 import EditProfile from "./components/EditProfile"
+import FavoritesContext from "./context/FavoritesContext"
+import AddToFavorites from "./components/AddToFavorites"
+import FavoritesList from "./components/FavoritesList"
+import AdvancedLanguageContext from "./context/AdvancedLanguageContext"
+import LanguageRegionSwitcher from "./components/LanguageRegionSwitcher"
+import LocalizedContent from "./components/LocalizedContent"
 
 function App() {
   // const [theme, setTheme] = useState('light')
@@ -32,7 +38,9 @@ function App() {
   // const [language, setLanguage] = useState('en')
   // const [viewMode, setViewMode] = useState('list')
   // const [ notificationIsActive, setNotificationIsActive] = useState(false)
-  const [ userProfile, setUserProfile] = useState({name: '', mail: '', phone: ''})
+  // const [ userProfile, setUserProfile] = useState({name: '', mail: '', phone: ''})
+  // const [listFavorites, setListFavorites] = useState([])
+  const [preferences, setPreferences] = useState({language: 'EN', region: 'North America'})
   
   return (
     <>
@@ -61,10 +69,18 @@ function App() {
       {/* <DynamicThemeContext.Provider value={{theme,setTheme}}>
           <ThemedComponent/>         
       </DynamicThemeContext.Provider> */}
-      <UserProfileContext.Provider value={{userProfile,setUserProfile}}>
+      {/* <UserProfileContext.Provider value={{userProfile,setUserProfile}}>
           <Profile/>
           <EditProfile/>
-      </UserProfileContext.Provider>
+      </UserProfileContext.Provider> */}
+      {/* <FavoritesContext.Provider value={{listFavorites,setListFavorites}}>
+          <AddToFavorites/>
+          <FavoritesList/>
+      </FavoritesContext.Provider> */}
+      <AdvancedLanguageContext.Provider value={{preferences,setPreferences}}>
+        <LanguageRegionSwitcher/>
+        <LocalizedContent/>
+      </AdvancedLanguageContext.Provider>
 
     </>
   )
