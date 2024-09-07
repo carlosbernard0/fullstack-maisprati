@@ -2,9 +2,7 @@ import { useContext, useState } from "react";
 import AdvancedLanguageContext from "../context/AdvancedLanguageContext";
 
 const LanguageRegionSwitcher = () => {
-    const {preferences, setPreferences} = useContext(AdvancedLanguageContext)
-    const [language, setLanguage] = useState(preferences.language)
-    const [region, setRegion] = useState(preferences.region)
+    const {setPreferences} = useContext(AdvancedLanguageContext)
 
     const handleChange = (event) => {
         if(event.target.value == 'EN'){

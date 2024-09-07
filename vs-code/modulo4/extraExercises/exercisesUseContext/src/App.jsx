@@ -28,6 +28,9 @@ import FavoritesList from "./components/FavoritesList"
 import AdvancedLanguageContext from "./context/AdvancedLanguageContext"
 import LanguageRegionSwitcher from "./components/LanguageRegionSwitcher"
 import LocalizedContent from "./components/LocalizedContent"
+import LayoutPreferencesContext from "./context/LayoutPreferencesContext"
+import LayoutSwitcher from "./components/LayoutSwitcher"
+import StyledComponent from "./components/StyledComponent"
 
 function App() {
   // const [theme, setTheme] = useState('light')
@@ -40,8 +43,9 @@ function App() {
   // const [ notificationIsActive, setNotificationIsActive] = useState(false)
   // const [ userProfile, setUserProfile] = useState({name: '', mail: '', phone: ''})
   // const [listFavorites, setListFavorites] = useState([])
-  const [preferences, setPreferences] = useState({language: 'EN', region: 'North America'})
-  
+  // const [preferences, setPreferences] = useState({language: 'EN', region: 'North America'})
+  const [layout, setLayout] = useState({padding: '0', margin:'0', font: 'Serif',theme: 'lightyellow'})
+
   return (
     <>
       {/* <ThemeContext.Provider value={{theme,setTheme}}>
@@ -77,10 +81,15 @@ function App() {
           <AddToFavorites/>
           <FavoritesList/>
       </FavoritesContext.Provider> */}
-      <AdvancedLanguageContext.Provider value={{preferences,setPreferences}}>
+      {/* <AdvancedLanguageContext.Provider value={{preferences,setPreferences}}>
         <LanguageRegionSwitcher/>
         <LocalizedContent/>
-      </AdvancedLanguageContext.Provider>
+      </AdvancedLanguageContext.Provider> */}
+      <LayoutPreferencesContext.Provider value={{layout, setLayout}}>
+          <LayoutSwitcher/>
+          <StyledComponent/>
+          <div>TESTANDO</div>
+      </LayoutPreferencesContext.Provider>
 
     </>
   )
