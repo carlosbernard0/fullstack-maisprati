@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
 
-    const [id, setId] = useState();
-
     return(
         <div>
             <h1>Hello Guys!</h1>
