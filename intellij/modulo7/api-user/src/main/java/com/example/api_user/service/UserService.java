@@ -34,6 +34,8 @@ public class UserService {
         userEntity.setMail(userDTO.getMail());
         userEntity.setRole(userDTO.getRole());
 
+        userEntity.setPassword(userDTO.getPassword());
+
         userRepository.save(userEntity);
 
         return convertToDTO(userEntity);
@@ -46,6 +48,7 @@ public class UserService {
             userEntity.setUserName(userDTO.getUserName());
             userEntity.setMail(userDTO.getMail());
             userEntity.setRole(userDTO.getRole());
+            userEntity.setPassword(userDTO.getPassword());
             userRepository.save(userEntity);
             return convertToDTO(userEntity);
         }
@@ -65,6 +68,8 @@ public class UserService {
         userDTO.setUserName(user.getUserName());
         userDTO.setMail(user.getMail());
         userDTO.setRole(user.getRole());
+
+        userDTO.setPassword(user.getPassword());
 
         return userDTO;
     }
