@@ -1,6 +1,7 @@
 package com.example.api_user.service;
 
 import com.example.api_user.dto.UserDTO;
+import com.example.api_user.enums.UserRole;
 import com.example.api_user.model.UserEntity;
 import com.example.api_user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,9 @@ public class UserService {
     }
 
     public UserDTO createUser(UserDTO userDTO){
-        UserEntity userEntity =  new UserEntity();
+        UserEntity userEntity = new UserEntity();
         userEntity.setUserName(userDTO.getUserName());
-        userEntity.setMail(userDTO.getMail());
-        userEntity.setRole(userDTO.getRole());
+        userEntity.setRole(UserRole.valueOf(userDTO.getRole()));
 
         userEntity.setPassword(userDTO.getPassword());
 
@@ -46,8 +46,8 @@ public class UserService {
         if(userOptional.isPresent()){
             UserEntity userEntity= userOptional.get();
             userEntity.setUserName(userDTO.getUserName());
-            userEntity.setMail(userDTO.getMail());
-            userEntity.setRole(userDTO.getRole());
+            userEntity.setRole(UserRole.valueOf(userDTO.getRole()));
+//            userEntity.setRole(userDTO.getRole());
             userEntity.setPassword(userDTO.getPassword());
             userRepository.save(userEntity);
             return convertToDTO(userEntity);
@@ -65,9 +65,8 @@ public class UserService {
     private UserDTO convertToDTO(UserEntity user){
         UserDTO userDTO = new UserDTO();
         userDTO.setIdUser(user.getId());
-        userDTO.setUserName(user.getUserName());
-        userDTO.setMail(user.getMail());
-        userDTO.setRole(user.getRole());
+        userDTO.setUserName(user.getUsername());
+        userDTO.setRole(String.valueOf(user.getRole()));
 
         userDTO.setPassword(user.getPassword());
 
